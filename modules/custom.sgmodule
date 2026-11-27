@@ -1,7 +1,7 @@
 #!name=My Custom Module
 #!desc=Module Shadowrocket tối ưu (Header Rewrite + Script + MITM)
 #!category=Custom
-#!url=https://raw.githubusercontent.com/<USERNAME>/<REPO>/main/modules/custom.sgmodule
+#!url=https://raw.githubusercontent.com/DTTv1211/my-shadowrocket-modules/main/modules/custom.sgmodule
 
 [Header Rewrite]
 # Xóa header cache/ETag trực tiếp bằng rule gốc (nhanh hơn dùng JS riêng)
@@ -10,7 +10,7 @@ http-request ^https:\/\/api\.example\.com\/v\d+\/profile header-del ETag
 
 [Script]
 # Xử lý response JSON từ API mục tiêu (timeout=10s, max-size=0 không giới hạn body)
-api-handler = type=http-response, pattern=^https:\/\/api\.example\.com\/v\d+\/profile(\?.*)?$, script-path=https://raw.githubusercontent.com/<USERNAME>/<REPO>/main/scripts/handler.js, requires-body=true, max-size=0, timeout=10
+api-handler = type=http-response, pattern=^https:\/\/api\.example\.com\/v\d+\/profile(\?.*)?$, script-path=https://raw.githubusercontent.com/DTTv1211/my-shadowrocket-modules/main/scripts/handler.js, requires-body=true, max-size=0, timeout=10
 
 [MITM]
 hostname = %APPEND% api.example.com
